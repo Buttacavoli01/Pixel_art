@@ -1,0 +1,24 @@
+{
+  "name": "pixel_art-master",
+  "version": "1.0.0",
+  "description": "This project was created using mostly html and jQuery to create a canvas using <table>  so users can channel their inner _picasso_ and create some art!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Buttacavoli01/Pixel_art.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Buttacavoli01/Pixel_art/issues"
+  },
+  "homepage": "https://github.com/Buttacavoli01/Pixel_art#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0"
+  },
+  "devDependencies": {}
+}
