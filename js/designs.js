@@ -20,7 +20,10 @@ $('#gridSize').submit((e) => {
   // color Selector
   let paint = $("#colorPicker").val();
   //event handler for painting
-  $(".cells").click((e) => $(e.target).css("background-color", paint));
+  $(".cells").click((e) => {
+    e.preventDefault();
+    $(e.target).css("background-color", paint);
+  });
   //event handler for erasing
   $(".cells").dblclick((e) => $(e.target).css("background-color", "#fff"));
 });
