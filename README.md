@@ -1,6 +1,6 @@
 ## Pixel art
 
-This project was created using html and jQuery to create a mock canvas using <table> 
+This project was created using html and JavaScript to create a mock canvas using <table> 
 so users can channel their inner _picasso_ and create some art!
  
 # Dependancies
