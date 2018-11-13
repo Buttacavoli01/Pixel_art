@@ -1,32 +1,31 @@
+
+var cells = document.getElementsByClassName('cells');
+
 function createGrid() {
-  let rows = $("#input_height").val();
-  let cols = $("#input_width").val();
-  $("table tr").remove();
+  let table = document.getElementById('pixelCanvas');
+  table.innerHTML = ''
+  let rows = document.getElementById('input_height').value;
+  let cols = document.getElementById('input_width').value;
+
 
   for (var i = 1; i <= rows; i++) {
-    $('table').append("<tr></tr>");
-    $('tr').attr("class", 'cells');
+    let row = table.appendChild(document.createElement("tr"));
 
     for (var j = 1; j <= cols; j++) {
-      $("tr:last").append("<td></td>");
-      $('td').attr("class", 'cells');
+      row.append(document.createElement('td'))
     }
   }
 }
 
 //form sumbit event handler
-$('#gridSize').submit((e) => {
+document.getElementById('gridSize').addEventListener('submit', (e) => {
   //preventing form from resetting
   e.preventDefault();
   createGrid();
 
-  //event handler for painting
-  $(".cells").click((e) => {
+  document.getElementsByTagName('td').addEventListener('click', function(e) {
+    let paint = document.getElementById('colorPicker').value
     e.preventDefault();
-    let paint = $("#colorPicker").val();
-    $(e.target).css("background-color", paint);
-  });
-
-  //event handler for erasing
-  $(".cells").dblclick((e) => $(e.target).css("background-color", "#fff"));
+    e.target.style = `background-color: ${paint}`;
+    });
 });
