@@ -1,5 +1,10 @@
+let color = document.querySelector('#colorPicker')
 
-var cells = document.getElementsByClassName('cells');
+document.getElementById('gridSize').addEventListener('submit', (e) => {
+  e.preventDefault()
+  createGrid()
+})
+
 
 function createGrid() {
   let table = document.getElementById('pixelCanvas');
@@ -7,25 +12,21 @@ function createGrid() {
   let rows = document.getElementById('input_height').value;
   let cols = document.getElementById('input_width').value;
 
-
   for (var i = 1; i <= rows; i++) {
     let row = table.appendChild(document.createElement("tr"));
 
     for (var j = 1; j <= cols; j++) {
-      row.append(document.createElement('td'))
+      let col = row.appendChild(document.createElement('td'))
+      col.onclick = changeColor
+      col.ondblclick = erase
     }
   }
 }
 
-//form sumbit event handler
-document.getElementById('gridSize').addEventListener('submit', (e) => {
-  //preventing form from resetting
-  e.preventDefault();
-  createGrid();
+function changeColor() {
+  this.style.background = color.value
+}
 
-  document.getElementsByTagName('td').addEventListener('click', function(e) {
-    let paint = document.getElementById('colorPicker').value
-    e.preventDefault();
-    e.target.style = `background-color: ${paint}`;
-    });
-});
+function erase() {
+  this.style.background = "#fff"
+}
